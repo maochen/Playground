@@ -6,3 +6,6 @@
 lib/
 bin/
 bin/*
+.settings/
+.classpath
+.project

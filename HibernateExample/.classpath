@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="libs/antlr-2.7.7.jar"/>
-	<classpathentry kind="lib" path="libs/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="libs/hibernate-commons-annotations-4.0.2.Final.jar"/>
-	<classpathentry kind="lib" path="libs/hibernate-core-4.3.0.Beta3.jar" sourcepath="C:/Users/maocheng/.m2/repository/org/hibernate/hibernate-core/4.3.0.Beta3/hibernate-core-4.3.0.Beta3-sources.jar"/>
-	<classpathentry kind="lib" path="libs/hibernate-jpa-2.1-api-1.0.0.Draft-16.jar"/>
-	<classpathentry kind="lib" path="libs/jandex-1.1.0.Alpha1.jar"/>
-	<classpathentry kind="lib" path="libs/javassist-3.15.0-GA.jar"/>
-	<classpathentry kind="lib" path="libs/jboss-logging-3.1.0.GA.jar"/>
-	<classpathentry kind="lib" path="libs/jboss-transaction-api_1.2_spec-1.0.0.Alpha1.jar"/>
-	<classpathentry kind="lib" path="libs/mysql-connector-java-5.1.25-bin.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>
