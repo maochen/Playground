@@ -6,7 +6,7 @@
 	
 	<display-name>shakeDecision</display-name>
 	<welcome-file-list>
-		<welcome-file>www/index.html</welcome-file>
+		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 
 	<servlet>
@@ -22,6 +22,7 @@
 			<param-name>com.sun.jersey.config.property.WebPageContentRegex</param-name>
 			<param-value>(/(image|js|css)/?.*)|(/.*\.jsp)|(/WEB-INF/.*\.jsp)|(/WEB-INF/.*\.jspf)|(/.*\.html)|(/favicon\.ico)|(/robots\.txt)</param-value>
 		</init-param>
+		
 	</servlet>
 
 	<servlet-mapping>

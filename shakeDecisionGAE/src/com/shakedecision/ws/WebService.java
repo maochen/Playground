@@ -1,9 +1,5 @@
 package com.shakedecision.ws;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-
 import javax.servlet.http.HttpServletRequest;
 
 import javax.ws.rs.GET;
@@ -38,31 +34,11 @@ public class WebService {
 
     }
 
-    private String readFile(String filepath) {
-        StringBuffer buf = new StringBuffer();
-        try {
-
-            FileInputStream fstream = new FileInputStream(filepath);
-            BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
-            String strLine;
-            while ((strLine = br.readLine()) != null) {
-                buf.append(strLine);
-            }
-            br.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return buf.toString();
-    }
-
     @GET
     @Produces(MediaType.TEXT_HTML)
-    public String intro(@Context HttpServletRequest request) {
+    public Viewable intro(@Context HttpServletRequest request) {
         request.setAttribute("obj", new String("IT Works"));
-        System.out.println("/I called");
-        return readFile("/html/index.html");
-        
-        // return new Viewable("/html/index.html", null);
+        System.out.println("/I called");    
+        return new Viewable("/index.html", null);
     }
 }
