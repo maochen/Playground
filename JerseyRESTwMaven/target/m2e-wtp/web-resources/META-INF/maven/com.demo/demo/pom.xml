@@ -33,6 +33,9 @@
 				<artifactId>maven-jetty-plugin</artifactId>
 				<version>6.1.22</version>
 				<configuration>
+					<contextPath>/</contextPath>
+					<war>${project.build.directory}/${project.build.finalName}.war</war>
+
 					<connectors>
 						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
 							<port>9090</port>
@@ -41,10 +44,6 @@
 					</connectors>
 
 					<webAppSourceDirectory>war</webAppSourceDirectory>
-					<webApp>
-						<contextPath>/</contextPath>
-						<war>${project.build.directory}/${project.build.finalName}.war</war>
-					</webApp>
 
 					<jetty-config>jetty.xml</jetty-config>
 				</configuration>

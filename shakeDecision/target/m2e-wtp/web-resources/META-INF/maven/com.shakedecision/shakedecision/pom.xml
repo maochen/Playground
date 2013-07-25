@@ -7,8 +7,8 @@
 	<packaging>war</packaging>
 
 	<build>
-	    
-	    <outputDirectory>target/${project.artifactId}-${project.version}/WEB-INF/classes</outputDirectory>
+
+		<outputDirectory>target/${project.artifactId}-${project.version}/WEB-INF/classes</outputDirectory>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 
@@ -41,20 +41,19 @@
 				<artifactId>maven-jetty-plugin</artifactId>
 				<version>6.1.22</version>
 				<configuration>
+					<contextPath>/</contextPath>
+					<war>${project.build.directory}/${project.build.finalName}.war</war>
+
 					<connectors>
 						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-							<port>9090</port>
+							<port>80</port>
 							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>
 
 					<webAppSourceDirectory>war</webAppSourceDirectory>
-					<webApp>
-						<contextPath>/</contextPath>
-						<war>${project.build.directory}/${project.build.finalName}.war</war>
-					</webApp>
 
-					<jetty-config>jetty.xml</jetty-config>
+					<!-- <jetty-config>jetty.xml</jetty-config> -->
 				</configuration>
 			</plugin>
 		</plugins>
