@@ -23,6 +23,12 @@
 			<param-value>(/(image|js|css)/?.*)|(/.*\.jsp)|(/WEB-INF/.*\.jsp)|(/WEB-INF/.*\.jspf)|(/.*\.html)|(/favicon\.ico)|(/robots\.txt)</param-value>
 		</init-param>
 		
+		 <init-param>
+             <param-name>com.sun.jersey.config.property.packages</param-name>
+             <param-value>com.shakedecision.ws</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+		
 	</servlet>
 
 	<servlet-mapping>

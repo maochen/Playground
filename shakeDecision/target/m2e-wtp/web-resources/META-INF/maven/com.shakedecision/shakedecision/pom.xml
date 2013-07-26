@@ -60,6 +60,15 @@
 	</build>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.scribe</groupId>
+			<artifactId>scribe</artifactId>
+			<version>1.1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/war/lib/scribe-1.1.0.jar</systemPath>
+		</dependency>
+
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-server</artifactId>
@@ -96,6 +105,11 @@
 			<artifactId>appengine-maven-plugin</artifactId>
 			<version>1.8.1.1</version>
 			<type>maven-plugin</type>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
 		</dependency>
 	</dependencies>
 </project>
