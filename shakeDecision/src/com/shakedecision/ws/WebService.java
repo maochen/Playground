@@ -34,7 +34,7 @@ public class WebService {
         JSONArray business = (JSONArray) json.get("businesses");
         JSONObject pickedout = null;
         
-        System.out.println(json.toJSONString());
+    //    System.out.println(json.toJSONString());
 
         while (pickedout == null || (boolean) pickedout.get("is_closed")) {
             int i = (int) (Math.random() * business.size());
