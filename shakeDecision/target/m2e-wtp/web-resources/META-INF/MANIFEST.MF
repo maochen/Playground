@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Build-Jdk: 1.7.0_21
-Built-By: MaochenG
+Build-Jdk: 1.6.0_51
+Built-By: castor
 Created-By: Maven Integration for Eclipse
 
