@@ -1,0 +1,9 @@
+use admin
+db.addUser( { user: "root", pwd: "xxxx", roles: [ "userAdminAnyDatabase" ] } )
+db.auth("root","xxxx")
+db.getCollection("system.users").find()
+
+db.XXX.update({condition},{$set:{pair:xxx}})
+
+db.dropDataBase()
+show databases

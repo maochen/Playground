@@ -1,0 +1,53 @@
+# Set the root logger to
+log4j.rootLogger=ALL, STDOUT, DB, MongoDB
+
+# STDOUT Appender
+log4j.appender.STDOUT=org.apache.log4j.ConsoleAppender
+log4j.appender.STDOUT.layout=org.apache.log4j.PatternLayout
+log4j.appender.STDOUT.layout.ConversionPattern=%-5p - %m -%M%n
+
+
+# MySql Appender
+log4j.appender.DB=org.apache.log4j.jdbc.JDBCAppender
+log4j.appender.DB.URL=jdbc:mysql://192.168.1.1:3306/test
+log4j.appender.DB.driver=com.mysql.jdbc.Driver
+log4j.appender.DB.user=test
+log4j.appender.DB.password=test
+
+log4j.appender.DB.sql=INSERT INTO audit(timestamp,level,class,message) VALUES( "%d{yyyy-MM-dd'T'HH:mm:ss}","%p","%C","%m")
+log4j.appender.DB.layout=org.apache.log4j.PatternLayout
+
+
+
+
+# MongoDB Appender classname
+# To log with a PatternLayout, use org.log4mongo.MongoDbPatternLayoutAppender
+log4j.appender.MongoDB=org.log4mongo.MongoDbAppender
+
+# MongoDB appender properties
+#  All are optional - defaults shown below (except for userName and password, which default to undefined)
+#  If using a replica set, set hostname to blank space-delimited list of host seeds. Don't include arbiters.
+#      Also, set port to either one port that all hosts will use or space-delimited list of one port per hostname
+log4j.appender.MongoDB.hostname=localhost
+log4j.appender.MongoDB.port=27017
+log4j.appender.MongoDB.databaseName=log4mongo
+log4j.appender.MongoDB.collectionName=log
+log4j.appender.MongoDB.userName=open
+log4j.appender.MongoDB.password=sesame
+
+# The layout property is required only if the MongoDbPatternLayoutAppender appender is used.
+#   If a custom PatternParser and custom PatternConverters are required to log additional data,
+#   the specified layout class must extend MongoDbPatternLayout. A ConversionPattern property
+#   should also be specified.
+#log4j.appender.MongoDB.layout=org.log4mongo.MongoDbPatternLayout
+
+# The ConversionPattern property is required only if MongoDbPatternLayoutAppender is used.
+#   The pattern must be a valid JSON document. The value will typically contain one or more
+#   converter characters that are replaced when a message is logged. A key cannot begin with $,
+#   contain a . or be equal to _id due to BSON naming restrictions. The JSON document can have
+#   sub-documents. Values can be strings or arrays.
+#log4j.appender.MongoDB.layout.ConversionPattern={"timestamp":"%d{yyyy-MM-dd'T'HH:mm:ss'Z'}","level":"%p","class":"%c{1}","message":"%m"}
+
+# Add optional root level elements to each log event
+#log4j.appender.MongoDB.rootLevelProperties=applicationName=MyProject&eventType=Development
+
