@@ -3,9 +3,10 @@ Template Code
 
 Java JAX-RS with Maven
 ----------------------
--- shackdecision
 
 Hibernate Example
-------------
--- HibernateExample
+-----------------
+
+JAX-RS with SS and log4j
+------------------------
 
