@@ -1,0 +1,29 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+
+
+<!-- create table user( id int auto_increment primary key, username varchar(100), 
+	password varchar(100), enabled boolean, role varchar(20) ); insert user(username,password,enabled,role) 
+	values ('t','t',true,'ROLE_ADMIN'); create table audit ( logId int PRIMARY 
+	KEY auto_increment, timestamp TIMESTAMP default 0, level varchar(255) default 
+	null, class varchar(255) default null, user varchar(255) default null, requestURI 
+	varchar(255) default null, message text default null ); -->
+
+<Configure id="Server">
+	<New id="mysqlDB" class="org.eclipse.jetty.plus.jndi.Resource">
+		<Arg>jdbc/mySQLDB</Arg>
+		<Arg>
+			<New class="com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource">
+				<Set name="url">jdbc:mysql://localhost:3306/demo</Set>
+				<Set name="user">root</Set>
+				<Set name="password">root</Set>
+			</New>
+		</Arg>
+	</New>
+
+</Configure>
+
+
+
+
+	
