@@ -6,6 +6,7 @@
 lib/
 bin/
 bin/*
+target/
 .settings/
 .classpath
 .project
