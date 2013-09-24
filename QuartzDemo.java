@@ -1,5 +1,3 @@
-package org.maochen.app;
-
 import java.util.Date;
 import java.util.List;
 
@@ -20,11 +18,12 @@ import org.quartz.impl.matchers.GroupMatcher;
 /**
  * For CRON Expression, check http://castorgmc.wordpress.com/2013/09/23/quartz-cron-expression/
  * 
- * 
+ * javac QuartzDemo.java -classpath ~/.m2/repository/org/quartz-scheduler/quartz/2.2.0/quartz-2.2.0.jar 
+ *
  * @author Maochen
  */
 
-public class HelloJob implements Job {
+public class QuartzDemo implements Job {
 
     @Override
     public void execute(JobExecutionContext arg0) throws JobExecutionException {
@@ -57,7 +56,7 @@ public class HelloJob implements Job {
     }
 
     public static void main(String[] args) throws SchedulerException {
-        JobDetail job = JobBuilder.newJob(HelloJob.class).withIdentity("DemoJob", "group1").build();
+        JobDetail job = JobBuilder.newJob(QuartzDemo.class).withIdentity("DemoJob", "group1").build();
         job.getJobDataMap().put("arg1", "input1");
 
         Trigger trigger = TriggerBuilder.newTrigger().withIdentity("DemoTrigger", "group1")
