@@ -1,12 +1,29 @@
-*.class
+# Damn Mac #
+.DS_Store
 
-# Package Files #
-*.war
-*.ear
-lib/
-bin/
+*.class
+bin
 bin/*
-target/
+*~
+*.lock
+*.DS_Store
+*.swp
+war/WEB-INF/lib/*
+
+# Eclipse #
 .settings/
 .classpath
 .project
+
+# Intellij #
+.idea
+*.iml
+out
+
+# Maven #
+target
+
+# Package Files #
+*.jar
+*.war
+*.ear

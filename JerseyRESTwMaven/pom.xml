@@ -34,7 +34,6 @@
 				<version>6.1.22</version>
 				<configuration>
 					<contextPath>/</contextPath>
-					<war>${project.build.directory}/${project.build.finalName}.war</war>
 
 					<connectors>
 						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
@@ -45,7 +44,6 @@
 
 					<webAppSourceDirectory>war</webAppSourceDirectory>
 
-					<jetty-config>jetty.xml</jetty-config>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -55,17 +53,17 @@
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-server</artifactId>
-			<version>1.17.1</version>
+			<version>1.18.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-client</artifactId>
-			<version>1.17.1</version>
+			<version>1.18.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-servlet</artifactId>
-			<version>1.17.1</version>
+			<version>1.18.1</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
