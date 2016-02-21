@@ -1,5 +1,8 @@
 package org.maochen.ws;
 
+import org.glassfish.jersey.server.mvc.Viewable;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -8,8 +11,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import javax.servlet.http.HttpServletRequest;
-import org.glassfish.jersey.server.mvc.Viewable;
 
 @Path("/")
 @Produces(MediaType.TEXT_HTML)
@@ -32,7 +33,7 @@ public class WebService {
     @GET
     @Produces(MediaType.TEXT_HTML)
     public Viewable index(@Context HttpServletRequest request) {
-        request.setAttribute("obj", new String("IT Works"));
+        request.setAttribute("obj", "IT Works");
         System.out.println("/I called");
         return new Viewable("/index.jsp", null);
     }
