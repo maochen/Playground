@@ -2,6 +2,9 @@ package org.maochen.ws;
 
 import org.glassfish.jersey.server.mvc.Viewable;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
@@ -16,18 +19,25 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.TEXT_HTML)
 public class WebService {
 
-    @Path("/{order}")
+    private static Map<String, String> orderData = new ConcurrentHashMap<>();
+
+    @Path("/place")
     @PUT
     @Produces("text/html")
-    public String create(@PathParam("order") String order, @QueryParam("customer_name") String customerName) {
-        return "Added order #" + order;
+    public String create(@PathParam("val") String val, @QueryParam("customer_name") String customerName, @Context HttpServletRequest request) {
+        if (customerName == null || customerName.trim().isEmpty()) {
+            customerName = request.getRemoteAddr() + "_" + request.getRemotePort();
+        }
+
+        orderData.put(customerName, val);
+        return "Added order " + val + " for " + customerName + System.lineSeparator();
     }
 
-    @Path("/{order}")
+    @Path("/list")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String find(@PathParam("order") String order) {
-        return null;
+    public String list() {
+        return orderData.toString() + System.lineSeparator();
     }
 
     @GET
