@@ -1,24 +1,16 @@
-import java.util.Date;
-import java.util.List;
+package org.maochen.playground;
 
-import org.quartz.CronScheduleBuilder;
-import org.quartz.Job;
-import org.quartz.JobBuilder;
-import org.quartz.JobDetail;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
-import org.quartz.JobKey;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerException;
-import org.quartz.Trigger;
-import org.quartz.TriggerBuilder;
+import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import org.quartz.impl.matchers.GroupMatcher;
 
+import java.util.Date;
+import java.util.List;
+
 /**
  * For CRON Expression, check http://castorgmc.wordpress.com/2013/09/23/quartz-cron-expression/
- * 
- * javac QuartzDemo.java -classpath ~/.m2/repository/org/quartz-scheduler/quartz/2.2.0/quartz-2.2.0.jar 
+ * <p>
+ * javac QuartzDemo.java -classpath ~/.m2/repository/org/quartz-scheduler/quartz/2.2.0/quartz-2.2.0.jar
  *
  * @author Maochen
  */
