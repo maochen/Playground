@@ -1,4 +1,4 @@
-Template Code
+Code Playground
 =======
 
 Java JAX-RS with Maven
