@@ -38,7 +38,7 @@ public class QuartzDemo implements Job {
                 List<Trigger> triggers = (List<Trigger>) scheduler.getTriggersOfJob(jobKey);
                 Date nextFireTime = triggers.get(0).getNextFireTime();
 
-                buf.append("[jobName] : " + jobName + " [groupName] : " + jobGroup + " - " + nextFireTime);
+                buf.append("[jobName] : " + jobName + " [groupName] : " + jobGroup + " - [Next Fire Time] : " + nextFireTime);
 
             }
 
@@ -47,7 +47,7 @@ public class QuartzDemo implements Job {
         return buf.toString();
     }
 
-    public static void main(String[] args) throws SchedulerException {
+    public static void main(String[] args) throws SchedulerException, InterruptedException {
         JobDetail job = JobBuilder.newJob(QuartzDemo.class).withIdentity("DemoJob", "group1").build();
         job.getJobDataMap().put("arg1", "input1");
 
@@ -58,6 +58,18 @@ public class QuartzDemo implements Job {
         scheduler.scheduleJob(job, trigger);
 
         scheduler.start();
+
+        System.out.println(QuartzDemo.listAllJobs(scheduler));
+
+        Thread.sleep(2000L);
+        System.out.println("Pause All");
+        scheduler.pauseAll();
+        Thread.sleep(3000L);
+        System.out.println("Resume All");
+        scheduler.resumeAll();
+        Thread.sleep(3000L);
+        System.out.println("Shutdown");
+        scheduler.shutdown();
 
     }
 }

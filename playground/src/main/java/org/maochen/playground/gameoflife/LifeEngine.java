@@ -12,14 +12,14 @@ import java.util.Random;
  */
 public class LifeEngine {
 
-    public Table<Integer, Integer, Cell> board = HashBasedTable.create();
+    Table<Integer, Integer, Cell> board = HashBasedTable.create();
 
     private Random generator;
 
-    public int cols = 0;
-    public int rows = 0;
+    private int cols = 0;
+    private int rows = 0;
 
-    public static final long SEED = 17L;
+    private static final long SEED = 17L;
 
     private boolean genState() {
         double num = generator.nextDouble();
@@ -105,10 +105,6 @@ public class LifeEngine {
         }
 
         return strBuilder.toString();
-    }
-
-    public void runUntilConverge() {
-//        Table prevBoard= board.copy
     }
 
     public LifeEngine(int rows, int cols) {
