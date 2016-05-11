@@ -18,6 +18,7 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SQLContext;
 import org.apache.spark.sql.functions;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.stream.Collectors;
@@ -28,7 +29,7 @@ import java.util.stream.Collectors;
 public class ClassificationExample {
     // <label> <index1>:<value1> <index2>:<value2> ... <indexN>:<valueN>
     public static final String path = "/Users/mguan/Desktop/logistic_regress_demo/sample_libsvm_data.txt";
-    public static final String pathPlain = "/Users/mguan/Desktop/logistic_regress_demo/data.txt";
+    public static final String pathPlain = ClassificationExample.class.getResource("/spark/student_exam_data.txt").getPath();
 
     public static void run() {
 
@@ -89,7 +90,7 @@ public class ClassificationExample {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Logger.getLogger("org").setLevel(Level.ERROR);
         Logger.getLogger("akka").setLevel(Level.ERROR);
         run();
