@@ -1,4 +1,0 @@
-HibernateExample
-================
-
-Small Hibernate Demo
