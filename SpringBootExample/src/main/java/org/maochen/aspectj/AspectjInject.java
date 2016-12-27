@@ -21,7 +21,7 @@ public class AspectjInject {
   }
 
   @AfterReturning(pointcut = "execution(* org.maochen.aspectj.Model.*(..))", returning = "result")
-  public void logAfterReturning(JoinPoint joinPoint, Object result) {
+  public void logAfterReturning(JoinPoint joinPoint, Object result) throws NoSuchFieldException {
     System.out.println("[AfterReturning]: " + joinPoint.getSignature().getName() + "()" + "\treturned value: " + result);
   }
 

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Model {
+
   public void example() {
     System.err.println("Call example()");
   }
