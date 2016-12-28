@@ -23,13 +23,13 @@ import javax.sql.DataSource;
 public class H2DbConfig {
 
   @Value("${spring.data.h2.url}")
-  private String dbUrl;
+  public String dbUrl;
 
   @Value("${spring.data.h2.username}")
-  private String userName;
+  public String userName;
 
   @Value("${spring.data.h2.password}")
-  private String password;
+  public String password;
 
   /**
    * H2 Data source.
