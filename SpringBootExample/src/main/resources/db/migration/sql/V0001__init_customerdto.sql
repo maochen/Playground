@@ -1,0 +1,9 @@
+CREATE TABLE CustomerDto (
+  ID        BIGINT NOT NULL,
+  FIRSTNAME VARCHAR(255) NOT NULL,
+  LASTNAME  VARCHAR(255) NOT NULL
+);
+
+INSERT INTO CustomerDto (ID, FIRSTNAME, LASTNAME) VALUES (1, 'Firstname_1', 'Lastname_1');
+INSERT INTO CustomerDto (ID, FIRSTNAME, LASTNAME) VALUES (2, 'Firstname_2', 'Lastname_2');
+INSERT INTO CustomerDto (ID, FIRSTNAME, LASTNAME) VALUES (3, 'Firstname_3', 'Lastname_3');

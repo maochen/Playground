@@ -23,16 +23,16 @@ import javax.annotation.PostConstruct;
 public class MongoDbConfig extends AbstractMongoConfiguration {
 
   @Value("${spring.data.mongodb.host:localhost}")
-  private String hostAddress;
+  public String hostAddress;
 
   @Value("${spring.data.mongodb.port:27017}")
-  private int port;
+  public int port;
 
   @Value("${spring.data.mongodb.username:admin}")
-  private String userName;
+  public String userName;
 
   @Value("${spring.data.mongodb.password:admin}")
-  private String pw;
+  public String pw;
 
   private List<MongoCredential> credentials;
 

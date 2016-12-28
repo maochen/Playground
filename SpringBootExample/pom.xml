@@ -15,7 +15,7 @@
   </properties>
 
   <prerequisites>
-    <maven>3.0</maven>
+    <maven>3.2.1</maven>
   </prerequisites>
 
   <parent>
@@ -92,6 +92,16 @@
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
+    </dependency>
+    <!-- END -->
+
+    <!-- FLYWAY Migriation -->
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
+      <version>4.0.3</version>
+      <scope>system</scope>
+      <systemPath>${pom.basedir}/lib/flyway-core-0-SNAPSHOT.jar</systemPath>
     </dependency>
     <!-- END -->
 
