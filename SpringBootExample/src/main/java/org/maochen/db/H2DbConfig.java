@@ -80,7 +80,7 @@ public class H2DbConfig {
   @Bean
   public ServletRegistrationBean h2servletRegistration() {
     ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new WebServlet());
-    servletRegistrationBean.addUrlMappings("/console/*");
+    servletRegistrationBean.addUrlMappings("/h2/*");
     return servletRegistrationBean;
   }
 }

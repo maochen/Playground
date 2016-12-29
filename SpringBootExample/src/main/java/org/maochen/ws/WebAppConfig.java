@@ -23,14 +23,17 @@ public class WebAppConfig extends WebMvcConfigurerAdapter implements EmbeddedSer
   //  public void addResourceHandlers(ResourceHandlerRegistry registry) {
   //    if (!registry.hasMappingForPattern("/**")) {
   //      registry.addResourceHandler("/**")
-  //        .addResourceLocations("file:war/")
-  //        .addResourceLocations("classpath:/../../");
+  //          .addResourceLocations("file:static/");
+  //      // .addResourceLocations("classpath:/../../");
   //      super.addResourceHandlers(registry);
   //    }
   //  }
 
   @Override
   public void addViewControllers(ViewControllerRegistry registry) {
+    registry.addViewController("/login").setViewName("login");
+    registry.addViewController("/hello").setViewName("hello");
+
     //    registry.addViewController("/").setViewName("forward:/settings.html");
   }
 }

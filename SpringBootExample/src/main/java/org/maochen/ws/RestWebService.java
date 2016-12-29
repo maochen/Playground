@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping(value = "/rest")
-public class WebService {
+public class RestWebService {
 
   @Autowired
   private CustomerRepository customerRepository;
