@@ -18,6 +18,6 @@ CREATE TABLE user_roles (
   CONSTRAINT fk_userid FOREIGN KEY (userid) REFERENCES users (userid)
 );
 
-INSERT INTO users (username, email, password, enabled) VALUES ('user', 'abc@abc.com', 'p', TRUE);
+INSERT INTO users (username, email, password, enabled) VALUES ('admin', 'admin@maochen.org', 'admin', TRUE);
 
-INSERT INTO user_roles (userid, role) VALUES (001, 'ROLE_USER');
+INSERT INTO user_roles (userid, role) VALUES (001, 'ADMIN');
