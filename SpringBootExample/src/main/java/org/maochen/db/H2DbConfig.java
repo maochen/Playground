@@ -71,7 +71,7 @@ public class H2DbConfig {
   }
 
   @Bean
-  public PlatformTransactionManager transactionManager(){
+  public PlatformTransactionManager transactionManager() {
     return new JpaTransactionManager();
   }
 

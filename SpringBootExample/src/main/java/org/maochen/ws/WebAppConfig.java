@@ -34,6 +34,6 @@ public class WebAppConfig extends WebMvcConfigurerAdapter implements EmbeddedSer
     registry.addViewController("/login").setViewName("login");
     registry.addViewController("/hello").setViewName("hello");
 
-    //    registry.addViewController("/").setViewName("forward:/settings.html");
+    registry.addViewController("/").setViewName("forward:/login");
   }
 }
